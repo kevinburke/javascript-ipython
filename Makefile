@@ -2,8 +2,8 @@ venv:
 	virtualenv venv
 
 install: venv
-	pip install --requirement requirements.txt
-	npm install ijavascript
+	. venv/bin/activate; pip install --requirement requirements.txt
+	. venv/bin/activate; npm install ijavascript
 
 clean: 
 	rm -rf venv
@@ -11,4 +11,4 @@ clean:
 	rm -rf .ipynb_checkpoints
 
 serve:
-	./node_modules/.bin/ijs --notebook-dir=/Users/burke/code/api --ijs-working-dir=/Users/burke/code/api
+	. venv/bin/activate; ./node_modules/.bin/ijs --notebook-dir=/Users/burke/code/api --ijs-working-dir=/Users/burke/code/api
