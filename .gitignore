@@ -1,3 +1,4 @@
 node_modules
 venv
 .ipynb_checkpoints
+notebooks

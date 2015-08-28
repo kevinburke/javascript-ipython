@@ -11,4 +11,4 @@ clean:
 	rm -rf .ipynb_checkpoints
 
 serve:
-	. venv/bin/activate; ./node_modules/.bin/ijs --notebook-dir=/Users/burke/code/api --ijs-working-dir=/Users/burke/code/api
+	./scripts/serve
