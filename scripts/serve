@@ -3,11 +3,11 @@
 set -eo pipefail
 
 main() {
+    local current_directory=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
     local dir
     if [[ -n "$JAVASCRIPT_IPYTHON_DIR" ]]; then 
         dir="$JAVASCRIPT_IPYTHON_DIR"
     else
-        local current_directory=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
         dir="$current_directory/../notebooks"
         mkdir -p "$dir"
     fi
