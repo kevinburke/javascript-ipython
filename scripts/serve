@@ -11,6 +11,12 @@ main() {
         dir="$current_directory/../notebooks"
         mkdir -p "$dir"
     fi
-    . venv/bin/activate; "$current_directory/../node_modules/.bin/ijs" --notebook-dir="$dir" --ijs-working-dir="$dir"
+
+    if [[ -n "$JAVASCRIPT_IPYTHON_WORKING_DIR" ]]; then
+        working_dir="$JAVASCRIPT_IPYTHON_WORKING_DIR"
+    else
+        working_dir="$dir"
+    fi
+    . venv/bin/activate; "$current_directory/../node_modules/.bin/ijs" --notebook-dir="$dir" --ijs-working-dir="$working_dir"
 }
 main
