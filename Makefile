@@ -3,7 +3,7 @@ venv:
 
 install: venv
 	. venv/bin/activate; pip install --requirement requirements.txt
-	. venv/bin/activate; npm install ijavascript
+	npm install
 
 clean: 
 	rm -rf venv
